@@ -3,15 +3,15 @@ package com.metao.java8.designpatterns.dp.decorator;
 import java.io.*;
 
 public class FileDataSource implements DataSource<String> {
-    private final String name;
+    private final String path;
 
-    public FileDataSource(String name) {
-        this.name = name;
+    public FileDataSource(String path) {
+        this.path = path;
     }
 
     @Override
     public void writeData(String data) {
-        File file = new File(name);
+        File file = new File(path);
         try (OutputStream fos = new FileOutputStream(file)) {
             fos.write(data.getBytes(), 0, data.length());
         } catch (IOException ex) {
@@ -22,7 +22,7 @@ public class FileDataSource implements DataSource<String> {
     @Override
     public String readData() {
         char[] buffer = null;
-        File file = new File(name);
+        File file = new File(path);
         try (FileReader reader = new FileReader(file)) {
             buffer = new char[(int) file.length()];
             reader.read(buffer);

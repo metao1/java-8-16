@@ -4,7 +4,7 @@ package com.metao.java8.designpatterns.dp.state;
  * Common interface for all states.
  */
 public abstract class State {
-    Player player;
+    final Player player;
 
     /**
      * Context passes itself through the state constructor. This may help a
