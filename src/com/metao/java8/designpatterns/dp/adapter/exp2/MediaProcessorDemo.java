@@ -1,13 +1,10 @@
 package com.metao.java8.designpatterns.dp.adapter.exp2;
-
 public class MediaProcessorDemo {
 
     public static void main(String[] args) {
-        Article article = new ArticleContentManagement("The media to be processed");
-        Media media = new MediaProcessorAdapter(article);
-        Article article2 = new ArticleContentManagement("Another media to be processed");
-        Media media2 = new MediaProcessorAdapter(article2);
-        System.out.println(media.processMedia().length);
-        System.out.println(media2.processMedia().length);
+        var media1 = new TargetContentManagement(new Article("Article media to be processed"));        
+        var media2 = new TargetContentManagement(new Text("Text media to be processed"));
+        System.out.println(media1.getContent());
+        System.out.println(media2.getContent());
     }
 }

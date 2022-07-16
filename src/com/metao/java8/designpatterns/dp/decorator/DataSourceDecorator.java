@@ -1,7 +1,7 @@
 package com.metao.java8.designpatterns.dp.decorator;
 
 public class DataSourceDecorator implements DataSource<String> {
-    private DataSource<String> wrappee;
+    private final DataSource<String> wrappee;
 
     DataSourceDecorator(DataSource<String> source) {
         this.wrappee = source;

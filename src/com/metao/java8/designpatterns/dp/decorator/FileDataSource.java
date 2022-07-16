@@ -3,7 +3,7 @@ package com.metao.java8.designpatterns.dp.decorator;
 import java.io.*;
 
 public class FileDataSource implements DataSource<String> {
-    private String name;
+    private final String name;
 
     public FileDataSource(String name) {
         this.name = name;

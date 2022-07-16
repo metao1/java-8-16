@@ -12,7 +12,7 @@ public class CompletableFutureThread {
         List<Integer> commands = List.of(10, 20, 10, 400, 23, 5000);
         List<CompletableFuture<Integer>> collect = commands.stream()
                 .map(action -> CompletableFuture.supplyAsync(supplier(action)))
-                .collect(Collectors.toList());
+                .toList();
 
         Thread.sleep(1000);
         List<Boolean> collect1 = collect.stream()

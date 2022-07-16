@@ -4,7 +4,7 @@ import java.util.Base64;
 
 public class EncryptionDecorator extends DataSourceDecorator {
 
-    public EncryptionDecorator(DataSource source) {
+    public EncryptionDecorator(DataSource<String> source) {
         super(source);
     }
 
