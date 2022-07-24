@@ -206,7 +206,7 @@ public class ChainProcessor {
                 .addValidator(validator)
                 .process((input, output) -> {
                     assert input.size() == 3;
-                    System.out.println(output);
+                    assert output.size() == 0;
                 });
     }
 
