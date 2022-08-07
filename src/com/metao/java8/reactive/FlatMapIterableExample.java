@@ -61,7 +61,7 @@
 //    private static class StringMessageErrorConsumer implements Consumer<Throwable> {
 //
 //        @Override
-//        public void accept(Throwable throwable) {
+//        public void config(Throwable throwable) {
 //            System.err.println(throwable.getMessage());
 //        }
 //    }
@@ -69,7 +69,7 @@
 //    private static class StringMessageConsumer implements Consumer<String> {
 //
 //        @Override
-//        public void accept(String s) {
+//        public void config(String s) {
 //            System.out.println(s);
 //        }
 //    }

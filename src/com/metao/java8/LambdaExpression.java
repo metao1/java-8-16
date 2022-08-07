@@ -87,7 +87,7 @@ public class LambdaExpression {
 //            thread.add(CompletableFuture.supplyAsync(s1));
 //        };
 //
-//        s.accept(supplier);
+//        s.config(supplier);
         thread.forEach(CompletableFuture::join);
 
         List<String> items =
