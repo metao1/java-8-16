@@ -11,9 +11,10 @@ public class CountWords {
         String[] blockedWords = new String[]{"the"};
         List<String> blockedList = Arrays.asList(blockedWords);
         String paragraph = "The ball, hit elephant and BALL caused it to die.";
-        String cleanedPar = paragraph.replaceAll("[^a-zA-Z0-9]+", " ");
+        String cleanedPar = paragraph.replaceAll("\\W+", " ");
+        //or String cleanedPar = paragraph.replaceAll("[^a-zA-Z0-9]+", " ");
         // Find max occurrence word in paragraph
-        String key = Arrays.stream(cleanedPar.split("\\s+"))
+        String key = Arrays.stream(cleanedPar.split(" "))
                 .map(String::toLowerCase)
                 .filter(Predicate.not(blockedList::contains))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
@@ -30,7 +31,7 @@ public class CountWords {
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .collect(Collectors.groupingBy(Map.Entry::getValue, LinkedHashMap::new, Collectors.mapping(Map.Entry::getKey, Collectors.toList())));
+
 
         System.out.println(item);
     }
