@@ -30,7 +30,7 @@ public class CountWords {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e -> 1)))
                 .entrySet()
                 .stream()
-                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
 
 
         System.out.println(item);
